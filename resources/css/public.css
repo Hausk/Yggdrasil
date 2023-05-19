@@ -1,0 +1,110 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+@font-face {
+        font-family: 'Montserrat';
+        src: url(/public/fonts/Montserrat-VariableFont.ttf);
+}
+
+:root{
+        /*Couleurs sombres et mystérieuses :*/
+        --noir: #000000;
+        --bgDark:#1a1a1a;
+        --darkGray: #333333;
+        --mindnight: #191970;
+        /*Accents de couleurs vives :*/
+        --red: #FF0000;
+        --blue: #00FFFF;
+        --purple: #800080;
+        /*Teintes métalliques :*/
+        --silver: #C0C0C0;
+        --gold: #FFD700;
+        --bronze: #CD7F32;
+        /*Couleurs associées aux éléments magiques*/
+        --water: #ADD8E6;
+        --forest: #008000;
+        --fire : #FF4500;
+}
+* {
+        -webkit-box-sizing: inherit;
+        box-sizing: inherit;
+}
+html, body {
+        color: #FFFFFF;
+        font-family: Montserrat;
+        font-size: 12px;
+        line-height: 1.2em;
+        min-height: 100%;
+        min-width: 320px;
+}
+html {
+        transition: linear .3s;
+}
+.dark {
+        transition: linear .3s;
+        background: var(--bgDark);
+}
+/** Navbar **/
+nav {
+	display: flex;
+	position: fixed;
+	top: 1.5%;
+	left: 1%;
+	right: 1%;
+	width: 98%;
+	height: 70px;
+	border-radius: 15px;
+	background-color: green;
+	margin: auto;
+	justify-content: space-around;
+}
+h1 {
+        font-weight: 900;
+        color: red;
+}
+.dark-mode-switch {
+	position: relative;
+	border-radius: 100%;
+	margin: auto 0;
+}
+.inner {
+	overflow: hidden;
+	width: 30px;
+	height: 30px;
+	border-radius: 100%;
+	margin: auto 0;
+}
+.border-portal {
+	border: 0.1px solid var(--blue);
+    border-radius: 50%;
+    overflow: hidden;
+    background: black;
+	padding: 1px;
+}
+.portal {
+	transform: rotate(0deg);
+	font-size: 12px;
+	width: 3em;
+	height: 3em;
+	border-radius: 90% 95% 85% 105%;
+	background: var(--blue);
+	mix-blend-mode: screen;
+	filter: hue-rotate(0deg);
+	animation: wobble calc(150ms * 46) linear infinite;
+	box-shadow: 0 0 0.5em 0.2em #000 inset, 0 0 0 0 #fff;
+}
+.portal::after {
+	font-size: 1em;
+	white-space: nowrap;
+}
+.dark .portal {
+	transition: .3s linear;
+	background: #000;
+	animation: none;
+}
+@keyframes wobble {
+	to {
+		filter: hue-rotate(360deg);
+		transform: rotate(360deg);
+	}
+}
