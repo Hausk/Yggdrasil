@@ -25,10 +25,6 @@
         --forest: #008000;
         --fire : #FF4500;
 }
-* {
-        -webkit-box-sizing: inherit;
-        box-sizing: inherit;
-}
 html, body {
         color: #FFFFFF;
         font-family: Montserrat;
